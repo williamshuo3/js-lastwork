@@ -169,10 +169,10 @@ orderInfoBtn.addEventListener('click',function(e){
     alert("請填滿");
     return
   }
-  createOrder()
+  createOrder(customerName,customerPhone,customerEmail,customerAddress,tradeWay)
 })
 // 送出購買訂單
-function createOrder() {
+function createOrder(customerName,customerPhone,customerEmail,customerAddress,tradeWay) {
   axios.post(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/orders`,
   {
     "data": {
