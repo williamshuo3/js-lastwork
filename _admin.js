@@ -119,7 +119,7 @@ function getOrderList() {
   // 修改訂單狀態
   function editOrderList( status,id) {
     let newStatus;
-    if(status == true){
+    if(status == 'true'){
         newStatus = false
     }else{
         newStatus = true
@@ -140,6 +140,9 @@ function getOrderList() {
         console.log(response.data);
         alert("修改成功")
         getOrderList()
+      })
+      .catch(function(error){
+        console.log(error.response.data);
       })
   }
   
@@ -173,6 +176,9 @@ function getOrderList() {
         console.log(response.data);
         getOrderList()
       })
+      .catch(function(error){
+        console.log(error.response.data);
+      })
   }
   const discardAllBtn = document.querySelector('.discardAllBtn');
   discardAllBtn.addEventListener('click',function(e){
@@ -193,5 +199,8 @@ function getOrderList() {
       .then(function (response) {
         console.log(response.data);
         getOrderList()
+      })
+      .catch(function(error){
+        console.log(error.response.data);
       })
   }
